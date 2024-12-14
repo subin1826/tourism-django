@@ -1,0 +1,105 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" width="device-width,initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'css/new.css' %}">
+        <title>login</title>
+        <style>
+    
+body {
+    font-family: Arial, sans-serif;
+    background-image: url("/static/images/bg5.jpeg");
+    background-repeat: no-repeat;
+    background-position:center;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+form {
+    background: #eaeff5;
+    padding: 20px;
+    padding-right: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 290px;
+    text-align: center;
+}
+form h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #271414;
+}
+
+form input[type="text"],
+form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+form button {
+    width: 50%;
+    padding: 10px;
+    background-color: #053d34;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+form button:hover {
+    background-color: #0056b3;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #000000;
+    text-align: left
+
+}
+.reg{
+ margin-top: 25px;
+ text-align: left;
+}
+        </style>
+    </head>
+   <body >
+    <form method="POST" >
+        {% csrf_token %}
+        <h1>Login</h1>
+        <label for="username">Username :</label>
+        {{ form.username }}
+       
+        <label for="password">Password :</label>
+        {{ form.password }}
+       
+
+        <button type="submit">submit</button>
+        <br>
+        <div class="reg">
+        New User ?   <a href="{% url 'register' %}">Register</a>
+        <br>
+        <br>
+        vendor ? ___<a href="{% url 'vendor_login' %}">Login</a>
+        </div>
+      
+
+
+    </form>
+
+   </body>
+</html>

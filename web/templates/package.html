@@ -1,0 +1,76 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" width="device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/new.css' %}">
+     <title>Tourist destinations</title>
+     <style>
+body{
+      font-family: Arial, sans-serif;
+        background-image: url("/static/images/bg2.jpg");
+        background-repeat: no-repeat;
+          background-position:center;
+          background-size: cover;
+          margin: 0;
+          padding: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+}
+form {
+    padding-left: 10px;
+    padding-right: 40px;
+    padding-bottom: 20px;
+    margin-right: 200px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  
+}
+form button {
+  width: 50%;
+  padding: 10px;
+  background-color: #01020e;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #0d47a1;
+}
+form input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+h1 {
+    margin-bottom: 20px;
+    font-size: 25px;
+    color: #03081b;
+    padding-top: 10px;
+    margin-right: 150px;
+   
+}
+
+     </style>
+</head>
+<body>
+   <h1>ADD 
+      <b><span style="color: rgb(30, 122, 92);">YOUR</span></b>
+      PACKAGE</h1>
+   <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">add</button>
+
+   </form>
+
+</body>
+</html>

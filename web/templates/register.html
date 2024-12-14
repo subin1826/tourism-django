@@ -1,0 +1,108 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" width="device-width,initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'css/new.css' %}">
+        <title>reg</title>
+        <style>
+body{
+      font-family: Arial, sans-serif;
+        background-image: url("/static/images/ac.jpg.jpeg");
+        background-repeat: no-repeat;
+          background-position:center;
+          background-size: cover;
+          margin: 0;
+          padding: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+}
+form {
+    padding-left: 10px;
+    padding-right: 40px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  
+}
+form button {
+  width: 50%;
+  padding: 10px;
+  background-color: #01020e;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #0d47a1;
+}
+form input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+h1 {
+    margin-bottom: 20px;
+    font-size: 25px;
+    color: #03081b;
+    padding-top: 10px;
+}
+.link1{
+   
+padding-left: 290px;
+}
+
+        </style>
+    </head>
+   <body>
+   
+            <form method="POST" >
+                
+                    
+                    {% csrf_token %}
+                    <h1>REGISTRATION FORM</h1>
+                    <label for="name" >First name :</label>
+                    {{ form.first_name }}
+                    <br>
+                    <br>
+                    <label for="name">Last name :</label>
+                    {{ form.last_name }}
+                    <br>
+                    <br>
+                    <label for="email">Email address :</label>
+                    {{ form.email }}
+                    <br>
+                    <br>
+                    <label for="name">Username :</label>
+                    {{ form.username }}
+                    <br>
+                    <br>
+                    <label for="password">password :</label>
+                    {{ form.password1 }}
+                    <br>
+                    <br>
+                    <label for="password">password confirmation :</label>
+                    {{ form.password2 }}
+                    <br>
+                    <br>
+                    <button type="submit">register</button>
+                        <div class="link1">
+                             <a href="{% url 'login' %}"> back menu</a>
+                        </div>
+                
+            </form>
+       
+   
+   </body>
+
+
+</html>
+

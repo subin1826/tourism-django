@@ -1,0 +1,101 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" width="device-width,initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'css/new.css' %}">
+        <title>datas</title>
+        <style>
+        
+body {
+    font-family: Arial, sans-serif;
+    background-image: url("/static/images/ah.jpg.jpg");
+    background-repeat: no-repeat;
+    background-position:center;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin-top: 50px;
+}
+.ord{
+    background-image: url("/static/images/ac.jpg.jpeg");
+    background-repeat: no-repeat;
+    background-position:center;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 20px;
+    padding-right: 40px;
+    margin-left: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align:left; 
+}
+   button {
+    width: 60%;
+    padding: 10px;
+    background-color: #051f3d;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-left: px;
+   
+    
+    
+}
+ button:hover {
+    background-color: #0d47a1;
+ }
+.card{
+    text-align: justify;
+}
+img{
+width: 100%;
+height: 190px;
+}
+
+
+        </style>
+    </head>
+   <body>
+   
+     
+        {% for i in item %}
+    <div class="ord">
+        <h1>{{ i.name }}</h1>
+        <p class="card"> {{ i.description }}</p>
+        <label><h4>main viewpoints:</h4>{{ i.main_viewpoint }} </label> 
+        <br>
+        <br>
+        <label><b>price: </b>{{ i.price }}</label> 
+        <br>
+        <br>
+        <label><b>Duration :</b> {{ i.duration }}</label> 
+        <br>
+        <img src="{{ i.media_gallery.url }}">
+        <br>
+        <br>
+        <form action="{% url 'delt' i.pk %}" method="post">
+        {% csrf_token %}
+        <button type="submit">Delete Package</button>
+        </form>
+        
+        <a href="{% url 'edited' i.pk %}"><button type="submit" >Edit Package</button></a>
+
+        <a href="{% url 'Package_data'  %}"><button type="submit" >Add Package</button></a>
+      
+    </div>
+    
+        
+     {% endfor %}
+    
+   </body>
+   
+</html>
