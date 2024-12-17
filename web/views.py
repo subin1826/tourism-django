@@ -35,7 +35,7 @@ def Userlogin(request):
             user = authenticate(username=username,password=password)
             if user is not None:
                 login(request, user)
-                return redirect('userdash')
+                return redirect('payment')
     else:
         form=Userloginform
     return render(request,"login.html",{'form':form})

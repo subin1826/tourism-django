@@ -82,9 +82,7 @@ height: 190px;
         <br>
         <img src="{{ i.media_gallery.url }}">
         <br>
-        <form>
-            <script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_PX5lIjpRkZIK2s" async> </script>
-        </form>
+        <a href="{% url 'login' %}"><button type="submit">Book Now</button></a>
         <br>
     </div>
     {% endif %} 

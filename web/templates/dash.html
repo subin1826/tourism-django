@@ -36,7 +36,7 @@ body {
     text-align:left; 
 }
    button {
-    width: 60%;
+    width: 100%;
     padding: 10px;
     background-color: #051f3d;
     border: none;
@@ -45,7 +45,8 @@ body {
     font-size: 15px;
     cursor: pointer;
     margin-top: 20px;
-    margin-left: px;
+    margin-left: 2px;
+    margin-right: 50px;
    
     
     
@@ -62,11 +63,13 @@ height: 190px;
 }
 
 
+
         </style>
     </head>
    <body>
-   
-     
+ 
+    <a href="{% url 'Package_data'  %}"><button type="submit" >Add Package</button></a>
+ 
         {% for i in item %}
     <div class="ord">
         <h1>{{ i.name }}</h1>
@@ -89,12 +92,12 @@ height: 190px;
         
         <a href="{% url 'edited' i.pk %}"><button type="submit" >Edit Package</button></a>
 
-        <a href="{% url 'Package_data'  %}"><button type="submit" >Add Package</button></a>
       
     </div>
     
         
      {% endfor %}
+
     
    </body>
    
