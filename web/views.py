@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect,get_object_or_404
 from .forms import *
 from .models import * 
-from django.contrib.auth import authenticate,login
+from django.contrib.auth import authenticate,login,logout
 from .models import Vendor 
 from .forms import Packageform 
 from django.contrib.auth.decorators import login_required
@@ -35,7 +35,7 @@ def Userlogin(request):
             user = authenticate(username=username,password=password)
             if user is not None:
                 login(request, user)
-                return redirect('payment')
+                return redirect('userdash')
     else:
         form=Userloginform
     return render(request,"login.html",{'form':form})
@@ -82,6 +82,7 @@ def dash(request):
     datas=Package.objects.all()
     return render(request,"dash.html",{'item':datas})
 
+@login_required
 def payment(request):
     return render(request,"payment.html")
 def delt(request,pk):
@@ -114,6 +115,9 @@ def Package_data1(request):
 def user_dash(request):
     datas=Package.objects.all()
     return render(request,"userdash.html",{'item':datas})
+def uslogout(request):
+    logout(request)
+    return redirect('index')
     
 
 

@@ -18,6 +18,7 @@ urlpatterns = [
     path('datas/<int:pk>/edited',v.edited,name="edited"),
     path('details1/',v.Package_data1,name='Package_data1'),
     path('userdash/',v.user_dash,name='userdash'),
+    path('out/',v.uslogout,name='uslogout'),
    
  
 
