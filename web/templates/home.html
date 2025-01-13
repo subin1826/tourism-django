@@ -6,12 +6,76 @@
         <meta name="viewport" width="device-width,initial-scale=1.0">
         <link rel="stylesheet" href="{% static 'css/new.css' %}">
         <title>home</title>
+        <style>
+            body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url("/static/images/bg5.jpeg");
+    background-repeat: no-repeat;
+    background-position:center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #2c3e50;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #162a3f;
+    font-weight: bold;
+}
+.log{
+    width: 8%;
+    padding: 10px;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-left: 180px;
+    
+}
+
+
+        </style>
     </head>
    <body>
    
+    <div class="container">
+    <h1>Thank you
+        <br>
+        for booking with us!
+    </h1>
+    <p>Thank you for your reservation
+        <br>
+        We're dedicated to giving you the best experience possible.
+        <br>
 
-    <h1>wellcome</h1>
-    
+    </p>
+
+    <div class="log">
+    <a href="{% url 'uslogout' %}">Logout</a>
+   </div>
+</div>
    </body>
    
 </html>
