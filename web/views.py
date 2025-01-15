@@ -117,6 +117,8 @@ def Package_data1(request):
 def user_dash(request):
     datas=Package.objects.all()
     return render(request,"userdash.html",{'item':datas})
+
+@login_required
 def uslogout(request):
     logout(request)
     return redirect('index')

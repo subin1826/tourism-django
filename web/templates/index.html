@@ -25,6 +25,15 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="{% static 'external/css/style.css' %}" rel="stylesheet">
+
+    <style>
+        .log1{
+            margin-right: 5px;
+            margin-left: 20px;
+            text-decoration: none;
+            color: black;
+        }
+    </style>
 </head>
 
 <body>
@@ -56,6 +65,9 @@
                         <a class="text-primary pl-3" href="">
                             <i class="fab fa-youtube"></i>
                         </a>
+                        <div class="log1">
+                        <a href="{% url 'uslogout' %}">Logout</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -80,11 +92,13 @@
                         <a href="{% url 'index' %}" class="nav-item nav-link">About</a>
                         <a href="{% url 'userdash' %}" class="nav-item nav-link">Tour Packages</a>
                         <a href="{% url 'index' %}" class="nav-item nav-link">Contact</a>
+                       
                     </div>
                 </div>
             </nav>
         </div>
     </div>
+    
     <!-- Navbar End -->
 
 
@@ -99,6 +113,7 @@
                             <h4 class="text-white text-uppercase mb-md-3">Tours & Travel</h4>
                             <h1 class="display-3 text-white mb-md-4">Discover Amazing Places With Us</h1>
                           <a href="{% url 'login' %}" class="btn btn-primary py-md-3 px-md-5 mt-2">Login</a>
+                    
                          
                         </div>
                     </div>
